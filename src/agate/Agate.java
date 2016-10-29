@@ -33,8 +33,9 @@ public static void main(String[] args)
         c1 = new Cliente();
         a = new Personal();
         
-        
-        System.out.println("AGATE LTD \n");
+        System.out.println("************************************************");
+        System.out.println("AGATE LTD");
+        System.out.println("************************************************");
         System.out.println("Bienvenido");
         System.out.println("................................................");
         System.out.println("1. Clientes");
@@ -149,32 +150,67 @@ public static void main(String[] args)
                                                          System.out.println("5. Anuncio de Radio");
                                                          System.out.println("6. Anuncio de carteles");
                                                          System.out.println("7. Folletos");
+                                                         System.out.println("8. Volver");
                                                          System.out.print("Seleccione uno de los numeros correspondientes a las opciones: ");
                                                          opcion[3] = leer.nextInt();
+                                                         clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().add(new Anuncio());
                                                          switch(opcion[3])
                                                             {
-                                                             case 1 : clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().setTipo("Periodico");
-                                                             case 2 : clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().setTipo("Revista");
-                                                             case 7 : clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().setTipo("Folleto");
+                                                             case 1:  clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setTipo("Periodico");
+                                                                      System.out.println("Escriba el nombre del Anuncio");
+                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setNombre(leer.next());
+                                                                      System.out.println("Ingrese el grafico del anuncio (nombre.jpg)");
+                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setGrafico(leer.next());
+                                                                      System.out.println("Ingrese el Texto del anuncio");
+                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setEscrito(leer.next());
+                                                                      System.out.println("Ingrese las fotograficas");
+                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setFotografia(leer.next());
+                                                                      System.out.println("...................................................................");
+                                                                      System.out.println("Anuncio de "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getTipo()+" creado");
+                                                                      System.out.println("Tipo: "+ clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getTipo());
+                                                                      System.out.println("Nombre: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getNombre());
+                                                                      System.out.println("Grafico: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getGrafico());
+                                                                      System.out.println("Texto: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getEscrito());
+                                                                      System.out.println("Fotografia"+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getFotografia());
+                                                                      contadorAnuncios = contadorAnuncios + 1;
                                                                       
-                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().add(new Anuncio());
+                                                                      break;
+                                                             case 2:  clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setTipo("Revista");
+                                                                      System.out.println("Escriba el nombre del Anuncio");
+                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setNombre(leer.next());
+                                                                      System.out.println("Ingrese el grafico del anuncio (nombre.jpg)");
+                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setGrafico(leer.next());
+                                                                      System.out.println("Ingrese el Texto del anuncio");
+                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setEscrito(leer.next());
+                                                                      System.out.println("Ingrese las fotograficas");
+                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setFotografia(leer.next());
+                                                                      System.out.println("...................................................................");
+                                                                      System.out.println("Anuncio de "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getTipo()+" creado");
+                                                                      System.out.println("Tipo: "+ clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getTipo());
+                                                                      System.out.println("Nombre: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getNombre());
+                                                                      System.out.println("Grafico: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getGrafico());
+                                                                      System.out.println("Texto: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getEscrito());
+                                                                      System.out.println("Fotografia"+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getFotografia());
+                                                                      contadorAnuncios = contadorAnuncios + 1;
                                                                       
-                                                                          System.out.println("Escriba el nombre del Anuncio");
-                                                                          clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setNombre(leer.next());
-                                                                          System.out.println("Ingrese el grafico del anuncio (nombre.jpg)");
-                                                                          clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setGrafico(leer.next());
-                                                                          System.out.println("Ingrese el Texto del anuncio");
-                                                                          clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setEscrito(leer.next());
-                                                                          System.out.println("Ingrese las fotograficas");
-                                                                          clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setFotografia(leer.next());
-                                                                          System.out.println("...................................................................");
-                                                                          System.out.println("Anuncio de "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getTipo()+" creado");
-                                                                          System.out.println("Tipo: "+ clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getTipo());
-                                                                          System.out.println("Nombre: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getNombre());
-                                                                          System.out.println("Grafico: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getGrafico());
-                                                                          System.out.println("Texto: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getEscrito());
-                                                                          System.out.println("Fotografia"+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getFotografia());
-                                                                          contadorAnuncios = contadorAnuncios + 1;
+                                                                      break;
+                                                             case 7:  clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setTipo("Folleto");
+                                                                      System.out.println("Escriba el nombre del Anuncio");
+                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setNombre(leer.next());
+                                                                      System.out.println("Ingrese el grafico del anuncio (nombre.jpg)");
+                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setGrafico(leer.next());
+                                                                      System.out.println("Ingrese el Texto del anuncio");
+                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setEscrito(leer.next());
+                                                                      System.out.println("Ingrese las fotograficas");
+                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setFotografia(leer.next());
+                                                                      System.out.println("...................................................................");
+                                                                      System.out.println("Anuncio de "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getTipo()+" creado");
+                                                                      System.out.println("Tipo: "+ clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getTipo());
+                                                                      System.out.println("Nombre: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getNombre());
+                                                                      System.out.println("Grafico: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getGrafico());
+                                                                      System.out.println("Texto: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getEscrito());
+                                                                      System.out.println("Fotografia"+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getFotografia());
+                                                                      contadorAnuncios = contadorAnuncios + 1;
                                                                       
                                                                       break;
                                                                       
@@ -285,6 +321,8 @@ public static void main(String[] args)
                                                                       clientes.get(nombreCliente).getCampañas().get(i).AddAnuncioCarteles();
                                                                       break;
                                                                       
+                                                             case 8 : break;
+                                                                      
                                                              default :System.out.println("Ingrese un valor valido");
                                                                       
                                                            
@@ -335,6 +373,10 @@ public static void main(String[] args)
                                                    {
                                                        if(clientes.get(nombreCliente).getCampañas().get(i).getNombre().equals(b)) 
                                                        {
+                                                           if(clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().size()== 0)
+                                                           {
+                                                               System.out.println("No existen anuncios activos para esta campaña");
+                                                           }
                                                          clientes.get(nombreCliente).getCampañas().get(i).mostarAnuncios();  
                                                        }
                                                        else System.out.println("No existen campañas Activas con ese nombre");
@@ -355,20 +397,27 @@ public static void main(String[] args)
                                   nombreCliente = leer.next();
                                   if(clientes.containsKey(nombreCliente))
                                   {
-                                      Campaña c = new Campaña();
-                                      System.out.println("Cliente: "+nombreCliente);
-                                      System.out.println("Ingrese el nombre de la Campaña a Finalizar");
-                                      nombreCampaña = leer.next();
-                                      System.out.println("Ingrese costos reales de la Campaña");
-                                      c.setPresupuestoReal(leer.nextInt());
                                       
-                                      System.out.println("Ingrese Fecha(dia, mes y año respectivamente) de terminacion de la campaña");
-                                      c.setFechaFinal(leer.nextInt(), leer.nextInt(), leer.nextInt());
-                                      clientes.get(nombreCliente).setCampaña(c);
-                                      clientes.get(nombreCliente).MostrarCampañas();
-                                      clientes.get(nombreCliente).borrarCampaña(nombreCampaña);
-                                      System.out.println("Campaña "+nombreCampaña+" Finalizada");
-                                      
+                                     Campaña c = new Campaña();
+                                     System.out.println("Cliente: "+clientes.get(nombreCliente).getNombre());
+                                     System.out.println("Ingrese el nombre de la Campaña a Finalizar");
+                                     nombreCampaña = leer.next();
+                                     for(int i = 0; i < clientes.get(nombreCliente).getCampañas().size(); i++)
+                                     {
+                                         if(clientes.get(nombreCliente).getCampañas().get(i).getNombre().equals(nombreCampaña))
+                                         {
+                                             System.out.println("Ingrese costos reales de la Campaña");
+                                             clientes.get(nombreCliente).getCampañas().get(i).setPresupuestoReal(leer.nextInt());
+                                             System.out.println("Ingrese Fecha(dia, mes y año respectivamente) de terminacion de la campaña");
+                                             clientes.get(nombreCliente).getCampañas().get(i).setFechaFinal(leer.nextInt(), leer.nextInt(), leer.nextInt());
+                                             clientes.get(nombreCliente).MostrarCampañas();
+                                             clientes.get(nombreCliente).borrarCampaña(nombreCampaña);
+                                             System.out.println("Campaña "+clientes.get(nombreCliente).getNombre()+" Finalizada");
+                                             
+                                         }
+                                         else System.out.println("No existe una campaña activa con ese nombre");
+                                     }
+                                       
                                   }
                                   else System.out.println("No existe un Cliente vinculado con ese nombre");
                                   
