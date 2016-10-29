@@ -24,7 +24,7 @@ public static void main(String[] args)
         Personal a = new Personal();
         Cliente c1;
         String nombreCliente, nombreCampaña;
-        
+        int contadorAnuncios = 0;
         int opcion[] = new int[4];
         boolean menu = true;
         
@@ -39,6 +39,7 @@ public static void main(String[] args)
         System.out.println("................................................");
         System.out.println("1. Clientes");
         System.out.println("2. Campañas");
+        System.out.println("3. Salir");
         opcion[0] = leer.nextInt();
         
         switch(opcion[0])
@@ -126,7 +127,8 @@ public static void main(String[] args)
                                       System.out.println("Opciones:");
                                       System.out.println("1. Agregar Anuncio");
                                       System.out.println("2. Borrar Anuncio");
-                                      System.out.println("3. Volver");
+                                      System.out.println("3. Mostrar Anuncios Activos");
+                                      System.out.println("4. Volver");
                                       opcion[2] = leer.nextInt();
                                       switch(opcion[2])
                                       {
@@ -154,22 +156,26 @@ public static void main(String[] args)
                                                              case 1 : clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().setTipo("Periodico");
                                                              case 2 : clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().setTipo("Revista");
                                                              case 7 : clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().setTipo("Folleto");
-                                                                      System.out.println("Escriba el nombre del Anuncio");
-                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().setNombre(leer.next());
-                                                                      System.out.println("Ingrese el grafico del anuncio del anuncio (nombre.jpg)");
-                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().setGrafico(leer.next());
-                                                                      System.out.println("Ingrese el Texto del anuncio");
-                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().setEscrito(leer.next());
-                                                                      System.out.println("Ingrese las fotograficas");
-                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().setFotografia(leer.next());
-                                                                      System.out.println("...................................................................");
-                                                                      System.out.println("Anuncio de "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getTipo()+" creado");
-                                                                      System.out.println("Tipo: "+ clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getTipo());
-                                                                      System.out.println("Nombre: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getNombre());
-                                                                      System.out.println("Grafico: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getGrafico());
-                                                                      System.out.println("Texto: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getEscrito());
-                                                                      System.out.println("Fotografia"+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getFotografia());
-                                                                      clientes.get(nombreCliente).getCampañas().get(i).AddAnuncio();
+                                                                      
+                                                                      clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().add(new Anuncio());
+                                                                      
+                                                                          System.out.println("Escriba el nombre del Anuncio");
+                                                                          clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setNombre(leer.next());
+                                                                          System.out.println("Ingrese el grafico del anuncio (nombre.jpg)");
+                                                                          clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setGrafico(leer.next());
+                                                                          System.out.println("Ingrese el Texto del anuncio");
+                                                                          clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setEscrito(leer.next());
+                                                                          System.out.println("Ingrese las fotograficas");
+                                                                          clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).setFotografia(leer.next());
+                                                                          System.out.println("...................................................................");
+                                                                          System.out.println("Anuncio de "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getTipo()+" creado");
+                                                                          System.out.println("Tipo: "+ clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getTipo());
+                                                                          System.out.println("Nombre: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(contadorAnuncios).getNombre());
+                                                                          System.out.println("Grafico: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getGrafico());
+                                                                          System.out.println("Texto: "+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getEscrito());
+                                                                          System.out.println("Fotografia"+clientes.get(nombreCliente).getCampañas().get(i).getAnuncio().getFotografia());
+                                                                          contadorAnuncios = contadorAnuncios + 1;
+                                                                      
                                                                       break;
                                                                       
                                                              case 3 : clientes.get(nombreCliente).getCampañas().get(i).getAnuncioInternet().setTipo("Internet");
@@ -294,10 +300,49 @@ public static void main(String[] args)
                                                      }
                                                      
                                                      else System.out.println("No existe una campaña activa con ese nombre");
+                                                     
                                                    }
+                                                   break;
                                                   
+                                          case 2 :  System.out.println("BORRAR ANUNCIO");
+                                                    System.out.println("Ingrese nombre de la campaña");
+                                                    b = leer.next();
+                                                    for( int i = 0 ; i < clientes.get(nombreCliente).getCampañas().size(); i++)
+                                                    {
+                                                    if(clientes.get(nombreCliente).getCampañas().get(i).getNombre().equals(b))
+                                                    {
+                                                        clientes.get(nombreCliente).getCampañas().get(i).mostarAnuncios();
+                                                        System.out.println("Ingrese nombre de anuncio a borrar ");
+                                                        b =leer.next();
+                                                        for(int x = 0 ; x < clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().size(); x++)
+                                                        {
+                                                          if(clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().get(x).getNombre().equals(b))
+                                                          {
+                                                              clientes.get(nombreCliente).getCampañas().get(i).getAnuncios().remove(x);
+                                                          }
+                                                          else System.out.println("No se encontraron anuncios con ese nombre");
+                                                        }  
+                                                    }
+                                                    
+                                                    else System.out.println("No existen campañas activas con ese nombre");
+                                                    }
+                                                    break;
+                                                    
+                                          case 3 : System.out.println("ANUNCIOS ACTIVOS");
+                                                   System.out.println("Ingrese nombre de la campaña");
+                                                   b = leer.next();
+                                                   for( int i = 0 ; i < clientes.get(nombreCliente).getCampañas().size(); i++)
+                                                   {
+                                                       if(clientes.get(nombreCliente).getCampañas().get(i).getNombre().equals(b)) 
+                                                       {
+                                                         clientes.get(nombreCliente).getCampañas().get(i).mostarAnuncios();  
+                                                       }
+                                                       else System.out.println("No existen campañas Activas con ese nombre");
+                                                   }
                                                    
-                                          
+                                                   break;
+                                                   
+                                          case 4 : break;          
                                       }
                                       
                                   }
@@ -330,7 +375,10 @@ public static void main(String[] args)
                          default : System.out.println("Ingrese un numero valido"); 
                          
                      }
-                             
+                     break;
+            
+            case 3 : System.out.println("Su sesion ha finalizado.");
+                     menu = false;         
                      
                      break;
                      
