@@ -11,7 +11,8 @@ import java.util.*;
  *
  * @author PC
  */
-public class Cliente {
+public class Cliente 
+{
     
     private String nombre;
     private Personal contacto;

@@ -21,6 +21,11 @@ public class Campaña
     private int presupuestoReal;
     private Anuncio anuncio;
     private ArrayList<Anuncio> anuncios;
+    private anuncioInternet anuncioInternet;
+    private anuncioTv anuncioTv;
+    private anuncioRadio anuncioRadio;
+    private anuncioCarteles anuncioCarteles;
+    
     
     public Campaña()
     {
@@ -31,7 +36,56 @@ public class Campaña
         this.presupuestoEstimado =0;
         this.presupuestoReal = 0;
         this.anuncios= new ArrayList<Anuncio>();
+        this.anuncio = new Anuncio();
+        this.anuncioInternet = new anuncioInternet();
+        this.anuncioTv = new anuncioTv();
+        this.anuncioCarteles = new anuncioCarteles();
     }
+
+    public anuncioCarteles getAnuncioCarteles() 
+    {
+        return anuncioCarteles;
+    }
+
+    public void setAnuncioCarteles(anuncioCarteles anuncioCarteles) 
+    {
+        this.anuncioCarteles = anuncioCarteles;
+    }
+    
+
+    public anuncioRadio getAnuncioRadio() 
+    {
+        return anuncioRadio;
+    }
+
+    public void setAnuncioRadio(anuncioRadio anuncioRadio) 
+    {
+        this.anuncioRadio = anuncioRadio;
+    }
+    
+    
+
+    public anuncioTv getAnuncioTv() 
+    {
+        return anuncioTv;
+    }
+
+    public void setAnuncioTv(anuncioTv anuncioTv) 
+    {
+        this.anuncioTv = anuncioTv;
+    }
+    
+
+    public anuncioInternet getAnuncioInternet() 
+    {
+        return anuncioInternet;
+    }
+
+    public void setAnuncioInternet(anuncioInternet anuncioInternet) 
+    {
+        this.anuncioInternet = anuncioInternet;
+    }
+    
 
     public String getNombre() 
     {
@@ -108,6 +162,50 @@ public class Campaña
     {
         this.presupuestoReal = presupuestoReal;
     }
+    
+    public void setAnuncio(Anuncio a)
+    {
+        this.anuncio = a;
+    }
+    
+    public Anuncio getAnuncio()
+    {
+        return this.anuncio;
+    }
+    
+    public void setAnuncios(ArrayList<Anuncio> a)
+    {
+        this.anuncios = a;
+    }
+    
+    public ArrayList<Anuncio> getAnuncios()
+    {
+        return this.anuncios;
+    }
+    public void AddAnuncio()
+    {
+        this.anuncios.add(this.getAnuncio());
+    }
+    public void AddAnuncioInternet()
+    {
+        this.anuncios.add(this.getAnuncioInternet());
+    }
+    
+    public void AddAnuncioTv()
+    {
+        this.anuncios.add(this.getAnuncioTv());
+    }
+    
+    public void AddAnuncioRadio()
+    {
+        this.anuncios.add(this.getAnuncioRadio());
+    }
+    
+    public void AddAnuncioCarteles()
+    {
+        this.anuncios.add(this.getAnuncioCarteles());
+    }
+    
     
     
     

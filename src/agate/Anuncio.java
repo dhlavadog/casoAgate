@@ -11,6 +11,8 @@ package agate;
  */
 public class Anuncio 
 {
+    private String nombre;
+    private String tipo;
     private String escrito;
     private String grafico;
     private String fotografia;
@@ -18,13 +20,35 @@ public class Anuncio
     
     public Anuncio()
     {
+        this.nombre = "";
+        this.tipo = "";
         this.escrito = "";
         this.grafico = "";
         this.fotografia = "";
     }
+    
+    public void setNombre(String nombre)
+    {
+        this.nombre = nombre;   
+    }
+    
+    public String getNombre()
+    {
+        return this.nombre;
+    }
+    
+    public void setTipo(String a)
+    {
+        this.tipo = a;
+    }
+    
+    public String getTipo()
+    {
+        return this.tipo; 
+    }
 
     public String getEscrito() {
-        return escrito;
+        return this.escrito;
     }
 
     public void setEscrito(String escrito) 
@@ -52,6 +76,7 @@ public class Anuncio
         this.fotografia = fotografia;
     }
     
+   
     
     
     
